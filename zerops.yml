@@ -11,8 +11,8 @@ zerops:
           prepareCommands:
               - curl --proto '=https' --tlsv1.2 -LsSf https://github.com/tursodatabase/libsql/releases/download/libsql-server-v0.24.31/libsql-server-installer.sh | sh
               - mv /root/.cargo/bin/sqld /usr/local/bin/sqld
-          start: sqld --enable-bottomless-replication --http-listen-addr 0.0.0.0:8080
           ports:
               - port: 8080
                 httpSupport: true
+          start: sqld --enable-bottomless-replication --http-listen-addr 0.0.0.0:8080
                 
